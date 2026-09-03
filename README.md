@@ -38,3 +38,43 @@ git config set --global user.name "github_username_here"
 git config set --global user.email "email@example.com"
 cat ~/.gitconfig
 ```
+
+## Repositories
+
+### Config
+
+```sh
+mkdir webflyx
+cd webflyx
+git init
+ls -a # .git
+```
+
+### Status
+
+```sh
+git status
+```
+
+### Staging
+
+```sh
+git add contents.md
+git status
+```
+
+### Commit
+
+```sh
+git  commit -m "A: add contents.md"
+git status
+```
+
+### Log
+
+[Git log](https://git-scm.com/docs/git-log)
+
+```sh
+git log 
+git --no-pager log -n 10
+```
