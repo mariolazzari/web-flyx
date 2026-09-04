@@ -236,3 +236,11 @@ git merge feature_1
 git branch -d add_classics
 git branch update_titles
 ```
+
+## Rebase
+
+### New branch
+
+```sh
+git switch -c update_dune COMMITHASH
+```
