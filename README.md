@@ -78,3 +78,44 @@ git status
 git log 
 git --no-pager log -n 10
 ```
+## Internals
+
+### Hashes
+
+[Commit](https://git-scm.com/book/en/v2/Git-Internals-Git-Objects#_git_commit_objects)
+[SHA-1](https://en.wikipedia.org/wiki/SHA-1)
+
+Commit hashes are derived from their content changes and:
+
+- The commit message
+- The author's name and email
+- The date and time
+- Parent (previous) commit hashes
+
+```sh
+git log -n 10
+ls -l .git/objects
+ls -al .git/objects/XX/
+```
+
+### Object file
+
+[cat](https://man7.org/linux/man-pages/man1/cat.1.html)
+[xxd](https://linux.die.net/man/1/xxd)
+
+```sh
+cat <path-to-file-from-before>
+xxd <path-to-file-from-before>
+```
+
+### Cat file
+
+```sh
+git log -1
+git cat-file -p <hash>
+```
+
+### Trees and Blobs
+
+- *tree*: git's way of storing a directory
+- *blob*: git's way of storing a file
