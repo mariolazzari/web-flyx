@@ -119,3 +119,120 @@ git cat-file -p <hash>
 
 - *tree*: git's way of storing a directory
 - *blob*: git's way of storing a file
+
+## Config
+
+### Git config
+
+```sh
+git config set --global user.name "ThePrimeagen"
+git config set --global user.email "the.primeagen@aol.com"
+
+git config set --local webflyx.ceo  "ThePrimeagen"
+git config set --local webflyx.cto "TheLaneagen"
+git config set --local webflyx.valuation "mid"
+
+git config list --local
+```
+
+### Get
+
+```sh
+git config get user.name
+git config get webflyx.ceo
+git config get webflyx.valuation
+```
+
+### Unset
+
+```sh
+git config unset webflyx.cto
+git config unset webflyx
+```
+
+### Duplicates
+
+```sh
+git config set --append webflyx.ceo "Warren"
+git config set --append webflyx.ceo "Carson"
+git config set --append webflyx.ceo "Sarah"
+git config list --local
+git config unset --all webflyx.ceo
+```
+
+### Remove section
+
+```sh
+git config remove-section webflyx
+```
+
+### Locations
+
+There are several locations where Git can be configured. From more general to more specific, they are:
+
+- system: /etc/gitconfig, a file that configures Git for all users on the system
+- global: ~/.gitconfig, a file that configures Git for all projects of a user
+- local: .git/config, a file that configures Git for a specific project
+- worktree: .git/config.worktree, a file that configures Git for part of a project
+
+## Branching
+
+### Branch
+
+```sh
+git branch
+```
+
+### Default branch
+
+```sh
+git branch -m oldname newname
+git config set --global init.defaultBranch main
+git branch
+```
+
+### New brnch
+
+```sh
+git branch my_new_branch
+git switch -c my_new_branch
+```
+
+### Switching branches
+
+```sh
+git switch prime
+# or, the old way:
+git checkout prime
+```
+
+Log flags
+
+As you know, git log shows you the history of commits in your repo. There are a few flags I like to use from time to time to make the output easier to read.
+
+The first is --decorate. It can be one of:
+- short (the default)
+- full (shows the full ref name)
+- no (no decoration)
+
+```sh
+git log --oneline
+```
+
+## Merge
+
+### Merge
+
+[Doc](https://git-scm.com/docs/git-merge)
+
+```sh
+git switch main
+git merge feature_1
+```
+
+### Fast forward merge
+
+```sh
+git branch -d add_classics
+git branch update_titles
+```
