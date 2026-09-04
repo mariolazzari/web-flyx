@@ -243,4 +243,5 @@ git branch update_titles
 
 ```sh
 git switch -c update_dune COMMITHASH
+git rebase main
 ```
