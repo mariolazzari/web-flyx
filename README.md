@@ -245,3 +245,51 @@ git branch update_titles
 git switch -c update_dune COMMITHASH
 git rebase main
 ```
+
+## Reset
+
+### Undoing changes
+
+```sh
+echo "* The Internship" > titles.md
+git status
+git add titles.md
+git commit -m "J:"
+```
+
+### Git reset soft
+
+Undo last commit
+
+```sh
+git reset --soft COMMITHASH
+git 
+```
+
+### Git Reset Hard
+
+```sh
+git reset --hard COMMITHASH
+```
+
+## Remote
+
+### Adding remote
+
+```sh
+git remote add <name> <uri>
+git fetch
+git fetch origin
+git merge origin/main
+git log
+```
+
+## Github
+
+### Repo
+
+```sh
+curl -sS https://webi.sh/gh | sh
+gh auth login
+git push origin main
+```
