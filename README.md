@@ -293,3 +293,16 @@ curl -sS https://webi.sh/gh | sh
 gh auth login
 git push origin main
 ```
+
+## Git ignore
+
+### .gitignore
+
+```sh
+touch .gitignore
+```
+
+### Pandoc
+
+```sh
+```
